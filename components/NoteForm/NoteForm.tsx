@@ -57,7 +57,7 @@ const NoteForm = ({ closeModal }: NoteFormProps) => {
 
   useEffect(() => {
     setValues(draft);
-  }, []);
+  }, [draft]);
 
   const createNoteMutation = useMutation({
     mutationFn: createNote,
@@ -175,7 +175,6 @@ const NoteForm = ({ closeModal }: NoteFormProps) => {
         </button>
         <button
           type="submit"
-          formAction="/notes/filter/all"
           className={css.submitButton}
           disabled={isSubmitting}
         >

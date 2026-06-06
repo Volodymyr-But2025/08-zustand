@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Notes app",
     images: [
       {
-        url: " https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
       },
     ],
   },
