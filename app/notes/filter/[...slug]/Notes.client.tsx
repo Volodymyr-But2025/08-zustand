@@ -119,6 +119,10 @@ import Pagination from "@/components/Pagination/Pagination";
 import Modal from "@/components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import { useDebouncedCallback } from "use-debounce";
+import { routerServerGlobal } from "next/dist/server/lib/router-utils/router-server-context";
+import router from "next/dist/shared/lib/router/router";
+import Router from "next/dist/shared/lib/router/router";
+import { useRouter } from "next/dist/client/components/navigation";
 
 function NotesClient({ filter }: { filter?: string }) {
   const [query, setQuery] = useState("");
@@ -138,7 +142,7 @@ function NotesClient({ filter }: { filter?: string }) {
       fetchNotes({
         query,
         page,
-        ...(filter && filter !== "all" && { tag: filter }),
+        ...(filter && filter.toLowerCase() !== "all" && { filter }),
       }),
     staleTime: 1000 * 60,
     refetchOnMount: false,
@@ -158,9 +162,9 @@ function NotesClient({ filter }: { filter?: string }) {
   const handlePageChange = (nextPage: number) => {
     setPage(nextPage);
   };
-
+  const router = useRouter();
   const handleOpenModal = () => {
-    setIsOpenModal(true);
+    router.push("/notes/action/create");
   };
 
   const handleCloseModal = () => {

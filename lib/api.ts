@@ -38,7 +38,16 @@ export const fetchNotes = async ({
       ...(filter ? { tag: filter } : {}),
     },
   });
-
+  console.log("Fetched notes data:", data);
+  console.log("Query parameters:", {
+    params: {
+      search: query,
+      page,
+      perPage: 12,
+      sortBy: "created",
+      ...(filter ? { tag: filter } : {}),
+    },
+  });
   return data;
 };
 
