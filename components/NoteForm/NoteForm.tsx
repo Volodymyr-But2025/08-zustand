@@ -175,7 +175,7 @@ const NoteForm = ({ closeModal }: NoteFormProps) => {
         </button>
         <button
           type="submit"
-          formAction="/notes"
+          formAction="/notes/filter/all"
           className={css.submitButton}
           disabled={isSubmitting}
         >

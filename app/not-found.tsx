@@ -3,13 +3,16 @@ import css from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "404 - Page not found",
-  description: "Sorry, the page you are looking for does not exist. ",
+  description: "Sorry, the page you are looking for does not exist.",
   openGraph: {
-    title: "Notehub",
-    description: "Notes app",
+    title: "404 - Page not found | NoteHub",
+    description: "Sorry, the page you are looking for does not exist.",
+    url: "https://notehub.example.com/not-found",
+    type: "website",
     images: [
       {
-        url: " https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        alt: "Page not found",
       },
     ],
   },

@@ -43,14 +43,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const filter = slug[0];
   return {
-    title: `Notes: ${filter}`,
-    description: `Browse notes filtered by ${filter}`,
+    title: `Notes: ${filter} | NoteHub`,
+    description: `Browse notes filtered by ${filter} category`,
     openGraph: {
-      title: "Notehub",
-      description: "Notes app",
+      title: `Notes: ${filter} | NoteHub`,
+      description: `Browse notes filtered by ${filter} category`,
+      url: `https://notehub.example.com/notes/filter/${filter}`,
+      type: "website",
       images: [
         {
-          url: " https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+          url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+          alt: `${filter} notes`,
         },
       ],
     },
